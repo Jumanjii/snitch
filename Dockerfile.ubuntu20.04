@@ -1,0 +1,5 @@
+FROM ubuntu:20.04 as base
+RUn apt-get update
+RUN apt-get update && apt-get install pkg-config libdlib-dev libopenblas-dev libgfortran-8-dev libjpeg-turbo8-dev -y
+ADD dlib-1.pc /usr/local/lib/pkgconfig/
+RUN pkg-config --cflags  -- dlib-1
